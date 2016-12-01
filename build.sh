@@ -47,8 +47,9 @@ fi
 if [ -a $minified ]
   then
     rm $minified
+    rm $minified.concat
 fi
 
-cat ${files[*]} >> $minified
+cat ${files[*]} >> $minified.concat
 
-uglifyjs --overwrite $minified
+uglifyjs -c -o $minified -- $minified.concat 
