@@ -52,4 +52,4 @@ fi
 
 cat ${files[*]} >> $minified.concat
 
-uglifyjs -c -o $minified -- $minified.concat 
+uglifyjs -m -c -o $minified -- $minified.concat 
